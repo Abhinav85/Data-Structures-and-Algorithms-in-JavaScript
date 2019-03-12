@@ -11,7 +11,7 @@ The following DataStructures have been added, though I've added some questions o
 
 - Linked Lists
 
-The Following Algorithms questions have been added too
+Some Questions from the following Algorithms questions have been added too
 
 - Searching
 
