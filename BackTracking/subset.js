@@ -29,12 +29,20 @@ powerSet = (A) => {
 // Smart JavaScript Method
 // Reduce the array (Perform the concat funcrion on all the elements provided)
 // The concat function returns individual arrays
+
+
 getAllSubsets =  theArray => theArray.reduce(
+    // Reducer takes the value achieved in the previous step, so this step is importantt o have all the arrays
         (subsets, value) => subsets.concat(
+    // This adds the current set and add the next value to it
          subsets.map(set => [...set,value])
         ),
+    // Add the results in an array, initialise the array with a blank variablle
         [[]]
         );
+
+
+
 
 
 // Recursive Method
@@ -67,6 +75,6 @@ subsetsRecursive = (A) => {
 
 let testArr = [3,4,1,2,9]
 
-console.log('Non Recursive Solution - ',getAllSubsets(testArr));
-console.log('Smart JavaScript Solution - ',powerSet(testArr));
+console.log('Non Recursive Solution - ',powerSet(testArr));
+console.log('Smart JavaScript Solution - ',getAllSubsets(testArr));
 console.log('Recursive Solution - ',subsetsRecursive(testArr))
