@@ -1,3 +1,8 @@
+// Q - Remove Duplicates from sorted linked list
+
+// Ans - Compare the curr node with next node, if next node is same as current
+// Move to the next node of the next node. Also change the curr to next
+
 const LList = require('./linkedListImplementation').LinkedList;
 
 
