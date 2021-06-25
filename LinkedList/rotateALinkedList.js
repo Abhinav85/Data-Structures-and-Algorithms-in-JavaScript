@@ -37,3 +37,64 @@ function rotateLList(list,k){
     console.log(list.display());
 }
 rotateLList(data,6);
+
+
+
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+ var rotateRight = function(head, k) {
+    // Find length of ll
+    let curr = head;
+    let lnth = 0;
+    
+    while(curr && curr.next){
+        lnth = lnth + 1;
+        curr = curr.next;
+    }
+    
+    // We add 1 because obviously
+    lnth = lnth + 1
+    
+    // if ll is smaller than 2, send back the linkedlist
+    if(lnth < 2) return head;
+    
+    let toRotate = k % lnth;
+    
+    
+    // If toRotate === 0, return the original ll
+    if(toRotate === 0) return head;
+    
+    // We make the list cycylic, so that once we reach to the point where we have to do the skipping, we just terminate that end, and not worry about the connection
+    curr.next = head;
+
+    
+    // How many to skip 
+    let toSkip = lnth - toRotate;
+    
+    curr = head;
+    
+    // Skip the appropriate poitions
+    while(toSkip > 1){
+        curr = curr.next;
+        toSkip = toSkip - 1;
+    }
+    
+    
+    // Break the loop here, and set the head as the new position
+    head = curr.next;
+    curr.next = null;
+    
+    return head
+        
+};

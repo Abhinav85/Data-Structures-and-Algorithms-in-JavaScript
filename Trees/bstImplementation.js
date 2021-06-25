@@ -18,6 +18,8 @@ function BST(){
     this.getMaxBst = getMaxBst;
     this.getMinBst = getMinBst;
     this.find = find;
+    this.minHeight = minHeight;
+    this.maxHeight = maxHeight;
 }
 
 function insert(data){
@@ -138,18 +140,46 @@ function removeNode(node,data){
 }
 
 
+function minHeight(node = this.root){
+    if(node == null){
+        return -1;
+    }
+
+    let left = this.minHeight(node.left);
+    let right = this.minHeight(node.right);
+
+    if(left< right){
+        return left + 1
+    }else{
+        return right + 1
+    }
+}
+
+function maxHeight(node = this.root){
+    
+}
+
+
+function isBalanced(){
+    return (this.minHeight() >= this.maxHeight() - 1)
+}
+
 var nums = new BST();
 nums.insert(23);
 nums.insert(2);
 nums.insert(123);
 nums.insert(323);
 nums.insert(45);
+
 nums.insert(12);
 nums.insert(230);
 nums.insert(1);
-console.log(nums.find(23))
-console.log(nums.getMinBst());
-console.log(nums.getMaxBst());
+console.log(nums.minHeight())
+
+// console.log(nums.postOrder())
+// console.log(nums.find(23))
+// console.log(nums.getMinBst());
+// console.log(nums.getMaxBst());
 
 
 

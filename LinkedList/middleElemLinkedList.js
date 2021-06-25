@@ -19,3 +19,33 @@ while(fast.next != null && fast.next.next != null){
 }
 
 console.log('Slow Elements',slow.value);
+
+
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+//  var middleNode = function(head) {
+//     let jump1 = head;
+//     let jump2 = head;
+    
+//     while(jump2 && jump2.next){
+//         jump1 = jump1.next;
+//         jump2 = jump2.next.next
+        
+//     }
+    
+    
+//     return jump1
+    
+    
+    
+// };

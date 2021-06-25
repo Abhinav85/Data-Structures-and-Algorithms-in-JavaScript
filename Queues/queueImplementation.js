@@ -13,7 +13,7 @@ function enqueue(num){
 }
 
 function dequeue(){
-    return this.dataStore.shift();
+    return this.dataStore.shift(); // Remove first item of the array
 }
 
 function front(){
